@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; font-family: Arial, sans-serif;">
+
+    <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 300px; text-align: center;">
+        <h2 style="color: #4CAF50; margin-bottom: 20px;">Login</h2>
+        <form id="loginForm" style="display: flex; flex-direction: column;">
+            <label for="username" style="margin-bottom: 10px;">
+                Username:
+                <input type="text" id="username" name="username" style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;" required>
+            </label>
+            <label for="password" style="margin-bottom: 20px;">
+                Password:
+                <input type="password" id="password" name="password" style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;" required>
+            </label>
+            <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Login</button>
+        </form>
+        <p id="message" style="color: red; margin-top: 10px;"></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // For demonstration purposes, let's use 'user' as username and 'pass' as password
+            if (username === 'user' && password === 'pass') {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').textContent = 'Login successful!';
+            } else {
+                document.getElementById('message').textContent = 'Invalid username or password.';
+            }
+        });
+    </script>
+
+</body>
+</html>
